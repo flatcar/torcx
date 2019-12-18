@@ -195,7 +195,7 @@ func extractOne(hdr *tar.Header, r io.Reader, targetDir string, cfg ExtractCfg) 
 			}
 
 			err := unix.Setxattr(path, k, []byte(v), 0)
-			if err != nil {
+			if err != nil && err != unix.EOPNOTSUPP {
 				return err
 			}
 		}
