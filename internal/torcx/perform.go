@@ -284,7 +284,7 @@ func setupPaths(applyCfg *ApplyConfig) error {
 
 	// Now, mount a tmpfs directory to the unpack directory.
 	// We need to do this because "/run" is typically marked "noexec".
-	if err := unix.Mount("none", applyCfg.RunUnpackDir(), "tmpfs", 0, ""); err != nil {
+	if err := unix.Mount("none", applyCfg.RunUnpackDir(), "tmpfs", 0, "size=450M"); err != nil {
 		return errors.Wrap(err, "failed to mount unpack dir")
 	}
 
