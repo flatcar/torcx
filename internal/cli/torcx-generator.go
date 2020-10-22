@@ -21,7 +21,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/coreos/torcx/internal/torcx"
+	"github.com/flatcar-linux/torcx/internal/torcx"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	logrus_syslog "github.com/sirupsen/logrus/hooks/syslog"
@@ -137,7 +137,7 @@ func lowerProfiles(commonCfg *torcx.CommonConfig) ([]string, error) {
 // vendorProfileFromDockerFlag returns the vendor profile name, if any,
 // implied by the contents of /etc/coreos/docker-1.12.
 func vendorProfileFromDockerFlag(commonCfg *torcx.CommonConfig) string {
-	flagPath := filepath.Join(filepath.Dir(filepath.Clean(commonCfg.ConfDir)), "coreos", "docker-1.12")
+	flagPath := filepath.Join(filepath.Dir(filepath.Clean(commonCfg.ConfDir)), "flatcar", "docker-1.12")
 	flagBytes, err := ioutil.ReadFile(flagPath)
 	if err != nil {
 		if os.IsNotExist(err) {

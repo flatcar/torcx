@@ -19,7 +19,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/coreos/torcx/internal/torcx"
+	"github.com/flatcar-linux/torcx/internal/torcx"
 )
 
 var (

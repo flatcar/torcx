@@ -25,8 +25,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/coreos/torcx/internal/third_party/docker/pkg/loopback"
-	pkgtar "github.com/coreos/torcx/pkg/tar"
+	"github.com/flatcar-linux/torcx/internal/third_party/docker/pkg/loopback"
+	pkgtar "github.com/flatcar-linux/torcx/pkg/tar"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/sys/unix"
