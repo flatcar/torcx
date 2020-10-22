@@ -6,9 +6,9 @@
 [![Build Status](https://travis-ci.org/coreos/torcx.svg?branch=master)](https://travis-ci.org/coreos/torcx)
 
 torcx (pronounced _"torks"_) is a boot-time manager for system-wide ephemeral customization of Linux systems.
-It has been built specifically to work with an immutable OS such as [Container Linux][coreos-cl] by CoreOS.
+It has been built specifically to work with an immutable OS such as [Flatcar Container Linux][flatcar-cl] by Kinvolk.
 
-[coreos-cl]: https://coreos.com/releases/
+[flatcar-cl]: https://www.flatcar-linux.org/releases/
 
 torcx focuses on:
 * providing a way for users to add additional binaries and services, even if not shipped in the base image
@@ -45,6 +45,10 @@ Image archives are looked up in several search paths, called "stores":
 
 At boot-time, torcx unpacks and propagates the addons defined in the active profile, specified in `/etc/torcx/next-profile`.
 Once done, torcx seals the system into its new state and records its own metadata under `/run/metadata/torcx`.
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) and the [Kinvolk Code of Conduct](https://github.com/kinvolk/contribution/blob/master/CODE_OF_CONDUCT.md)
 
 ## License
 
