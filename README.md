@@ -48,9 +48,16 @@ Once done, torcx seals the system into its new state and records its own metadat
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) and the [Kinvolk Code of Conduct](https://github.com/kinvolk/contribution/blob/master/CODE_OF_CONDUCT.md)
+Please see [CONTRIBUTING](https://github.com/kinvolk/contribution/) and the [Kinvolk Code of Conduct](https://github.com/kinvolk/contribution/blob/master/CODE_OF_CONDUCT.md)
 
 ## License
 
 torcx is released under the Apache 2.0 license.
 See the [LICENSE](LICENSE) file for all details.
+
+## Certificate of Origin
+
+By contributing to this project you agree to the Developer Certificate of
+Origin (DCO). This document was created by the Linux Kernel community and is a
+simple statement that you, as a contributor, have the legal right to make the
+contribution. See the [DCO](http://developercertificate.org/) site for details.
