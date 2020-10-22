@@ -86,7 +86,7 @@ func runProfileCheck(cmd *cobra.Command, args []string) error {
 			logrus.Infof("No profile specified, using next profile %q", flagProfileCheckName)
 
 			if flagProfileCheckName == torcx.VendorProfileName {
-				logrus.Warn("Checking default (%s) profile - do you mean to do that?", flagProfileCheckName)
+				logrus.Warnf("Checking default (%s) profile - do you mean to do that?", flagProfileCheckName)
 			}
 		}
 

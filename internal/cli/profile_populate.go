@@ -68,7 +68,7 @@ func runProfilePopulate(cmd *cobra.Command, args []string) error {
 			logrus.Infof("using next profile %q", flagProfilePopulateName)
 
 			if flagProfilePopulateName == torcx.VendorProfileName {
-				logrus.Warn("using default profile (%s), which should not require external images", torcx.VendorProfileName)
+				logrus.Warnf("using default profile (%s), which should not require external images", torcx.VendorProfileName)
 			}
 		}
 
