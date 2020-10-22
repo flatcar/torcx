@@ -16,10 +16,10 @@
 BIN := torcx
 
 # This repo's root import path (under GOPATH).
-PKG := github.com/coreos/torcx
+PKG := github.com/flatcar-linux/torcx
 
 # Where to push the docker image.
-REGISTRY ?= quay.io/coreos
+REGISTRY ?= quay.io/kinvolk
 
 # Which architecture to build - see $(ALL_ARCH) for options.
 ARCH ?= amd64
@@ -52,7 +52,7 @@ endif
 
 IMAGE ?= $(REGISTRY)/$(BIN)$(IMARCH)
 
-BUILD_IMAGE ?= golang:1.8-stretch
+BUILD_IMAGE ?= golang:1.15
 
 # If you want to build all binaries, see the 'all-build' rule.
 # If you want to build all containers, see the 'all-container' rule.
@@ -86,6 +86,7 @@ bin/$(ARCH)/$(BIN): build-dirs
 	    -v $$(pwd)/bin/$(ARCH):/go/bin                                     \
 	    -v $$(pwd)/bin/$(ARCH):/go/bin/linux_$(ARCH)                       \
 	    -v $$(pwd)/.go/std/$(ARCH):/usr/local/go/pkg/linux_$(ARCH)_static  \
+	    --mount type=tmpfs,destination=/.cache,tmpfs-mode=1777             \
 	    -w /go/src/$(PKG)                                                  \
 	    $(BUILD_IMAGE)                                                     \
 	    /bin/sh -c "                                                       \
@@ -120,6 +121,7 @@ test: build-dirs
 	    -v $$(pwd):/go/src/$(PKG)                                          \
 	    -v $$(pwd)/bin/$(ARCH):/go/bin                                     \
 	    -v $$(pwd)/.go/std/$(ARCH):/usr/local/go/pkg/linux_$(ARCH)_static  \
+	    --mount type=tmpfs,destination=/.cache,tmpfs-mode=1777             \
 	    -w /go/src/$(PKG)                                                  \
 	    $(BUILD_IMAGE)                                                     \
 	    /bin/sh -c "                                                       \
