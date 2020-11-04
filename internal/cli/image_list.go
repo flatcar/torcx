@@ -18,7 +18,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/coreos/torcx/internal/torcx"
+	"github.com/flatcar-linux/torcx/internal/torcx"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )

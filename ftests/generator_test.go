@@ -21,11 +21,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/coreos/torcx/internal/torcx"
+	"github.com/flatcar-linux/torcx/internal/torcx"
 )
 
 const (
-	dockerFlagPath = "/etc/coreos/docker-1.12"
+	dockerFlagPath = "/etc/flatcar/docker-1.12"
 )
 
 func TestGeneratorEmpty(t *testing.T) {

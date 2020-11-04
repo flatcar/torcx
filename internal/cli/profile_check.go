@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/coreos/torcx/internal/torcx"
+	"github.com/flatcar-linux/torcx/internal/torcx"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -86,7 +86,7 @@ func runProfileCheck(cmd *cobra.Command, args []string) error {
 			logrus.Infof("No profile specified, using next profile %q", flagProfileCheckName)
 
 			if flagProfileCheckName == torcx.VendorProfileName {
-				logrus.Warn("Checking default (%s) profile - do you mean to do that?", flagProfileCheckName)
+				logrus.Warnf("Checking default (%s) profile - do you mean to do that?", flagProfileCheckName)
 			}
 		}
 

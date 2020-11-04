@@ -23,9 +23,9 @@ import (
 )
 
 const (
-	EmptyImage      = "github.com/coreos/torcx/ftests/empty"
-	VendorImage     = "github.com/coreos/torcx/ftests/vendor"
-	DockerFlagImage = "github.com/coreos/torcx/ftests/docker-flag"
+	EmptyImage      = "github.com/flatcar-linux/torcx/ftests/empty"
+	VendorImage     = "github.com/flatcar-linux/torcx/ftests/vendor"
+	DockerFlagImage = "github.com/flatcar-linux/torcx/ftests/docker-flag"
 )
 
 func init() {

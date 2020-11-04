@@ -19,8 +19,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/coreos/torcx/internal/cli"
-	"github.com/coreos/torcx/pkg/multicall"
+	"github.com/flatcar-linux/torcx/internal/cli"
+	"github.com/flatcar-linux/torcx/pkg/multicall"
 )
 
 func main() {
