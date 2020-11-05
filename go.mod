@@ -3,7 +3,6 @@ module github.com/flatcar-linux/torcx
 go 1.15
 
 require (
-	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/euank/gotmpl v0.1.0
 	github.com/golang/protobuf v1.4.3 // indirect
 	github.com/google/go-cmp v0.5.2 // indirect
@@ -17,7 +16,7 @@ require (
 	github.com/onsi/ginkgo v1.14.2 // indirect
 	github.com/onsi/gomega v1.10.3 // indirect
 	github.com/opencontainers/go-digest v1.0.0
-	github.com/pelletier/go-toml v1.2.0 // indirect
+	github.com/pelletier/go-toml v1.8.1 // indirect
 	github.com/pkg/errors v0.8.0
 	github.com/sirupsen/logrus v1.0.4
 	github.com/spf13/afero v1.1.1 // indirect
