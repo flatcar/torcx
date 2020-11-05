@@ -1,13 +1,13 @@
 # github.com/BurntSushi/toml v0.3.1
 ## explicit
-# github.com/davecgh/go-spew v1.1.1
-## explicit
 # github.com/euank/gotmpl v0.1.0
 ## explicit
 github.com/euank/gotmpl
 # github.com/fsnotify/fsnotify v1.4.9
 github.com/fsnotify/fsnotify
-# github.com/hashicorp/hcl v0.0.0-20180404174102-ef8a98b0bbce
+# github.com/golang/protobuf v1.4.3
+## explicit
+# github.com/hashicorp/hcl v1.0.0
 ## explicit
 github.com/hashicorp/hcl
 github.com/hashicorp/hcl/hcl/ast
