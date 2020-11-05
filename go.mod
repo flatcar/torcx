@@ -20,7 +20,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/sirupsen/logrus v1.0.4
 	github.com/spf13/afero v1.4.1 // indirect
-	github.com/spf13/cast v1.2.0 // indirect
+	github.com/spf13/cast v1.3.1 // indirect
 	github.com/spf13/cobra v0.0.0-20170309154509-16c014f1a19d
 	github.com/spf13/jwalterweatherman v0.0.0-20180109140146-7c0cea34c8ec // indirect
 	github.com/spf13/pflag v0.0.0-20170130214245-9ff6c6923cff // indirect
