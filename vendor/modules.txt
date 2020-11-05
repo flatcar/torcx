@@ -70,11 +70,9 @@ github.com/spf13/pflag
 # github.com/spf13/viper v0.0.0-20170217163817-7538d73b4eb9
 ## explicit
 github.com/spf13/viper
-# github.com/stretchr/objx v0.3.0
-## explicit
 # github.com/stretchr/testify v1.6.1
 ## explicit
-# golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+# golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897
 ## explicit
 golang.org/x/crypto/cast5
 golang.org/x/crypto/openpgp
