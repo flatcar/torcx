@@ -13,6 +13,7 @@ require (
 	github.com/mitchellh/mapstructure v1.3.3 // indirect
 	github.com/northbright/ctx v0.0.0-20161024043329-d1b203ae2564
 	github.com/northbright/pathhelper v0.0.0-20170328083152-212a42014bc5 // indirect
+	github.com/nxadm/tail v1.4.5 // indirect
 	github.com/onsi/ginkgo v1.14.2 // indirect
 	github.com/onsi/gomega v1.10.3 // indirect
 	github.com/opencontainers/go-digest v1.0.0-rc1
@@ -27,7 +28,7 @@ require (
 	github.com/spf13/viper v0.0.0-20170217163817-7538d73b4eb9
 	github.com/stretchr/testify v1.6.1 // indirect
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
-	golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f
+	golang.org/x/sys v0.0.0-20201101102859-da207088b7d1
 	gopkg.in/airbrake/gobrake.v2 v2.0.9 // indirect
 	gopkg.in/gemnasium/logrus-airbrake-hook.v2 v2.1.2 // indirect
 )

@@ -34,6 +34,8 @@ github.com/mitchellh/mapstructure
 github.com/northbright/ctx/ctxcopy
 # github.com/northbright/pathhelper v0.0.0-20170328083152-212a42014bc5
 ## explicit
+# github.com/nxadm/tail v1.4.5
+## explicit
 # github.com/onsi/ginkgo v1.14.2
 ## explicit
 # github.com/onsi/gomega v1.10.3
@@ -85,7 +87,7 @@ golang.org/x/crypto/openpgp/s2k
 golang.org/x/crypto/ssh/terminal
 # golang.org/x/net v0.0.0-20201006153459-a7d1128ccaa0
 golang.org/x/net/context
-# golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f
+# golang.org/x/sys v0.0.0-20201101102859-da207088b7d1
 ## explicit
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
