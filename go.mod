@@ -9,7 +9,7 @@ require (
 	github.com/google/go-cmp v0.5.2 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
-	github.com/magiconair/properties v1.8.0 // indirect
+	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/mitchellh/mapstructure v0.0.0-20180511142126-bb74f1db0675 // indirect
 	github.com/northbright/ctx v0.0.0-20161024043329-d1b203ae2564
 	github.com/northbright/pathhelper v0.0.0-20170328083152-212a42014bc5 // indirect

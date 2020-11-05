@@ -23,7 +23,7 @@ github.com/hashicorp/hcl/json/token
 # github.com/inconshreveable/mousetrap v1.0.0
 ## explicit
 github.com/inconshreveable/mousetrap
-# github.com/magiconair/properties v1.8.0
+# github.com/magiconair/properties v1.8.4
 ## explicit
 github.com/magiconair/properties
 # github.com/mitchellh/mapstructure v0.0.0-20180511142126-bb74f1db0675
