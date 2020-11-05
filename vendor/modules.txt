@@ -61,7 +61,7 @@ github.com/spf13/cast
 # github.com/spf13/cobra v0.0.0-20170309154509-16c014f1a19d
 ## explicit
 github.com/spf13/cobra
-# github.com/spf13/jwalterweatherman v0.0.0-20180109140146-7c0cea34c8ec
+# github.com/spf13/jwalterweatherman v1.1.0
 ## explicit
 github.com/spf13/jwalterweatherman
 # github.com/spf13/pflag v0.0.0-20170130214245-9ff6c6923cff
