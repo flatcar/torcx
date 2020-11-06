@@ -54,6 +54,8 @@ IMAGE ?= $(REGISTRY)/$(BIN)$(IMARCH)
 
 BUILD_IMAGE ?= golang:1.15
 
+SET_USER=$(shell (docker --version | grep -q podman) || echo "-u $(shell id -u):$(shell id -g)")
+
 # If you want to build all binaries, see the 'all-build' rule.
 # If you want to build all containers, see the 'all-container' rule.
 # If you want to build AND push all containers, see the 'all-push' rule.
@@ -79,8 +81,7 @@ build: bin/$(ARCH)/$(BIN)
 bin/$(ARCH)/$(BIN): build-dirs
 	@echo "building: $@"
 	@docker run                                                            \
-	    -ti                                                                \
-	    -u $$(id -u):$$(id -g)                                             \
+	    -ti $(SET_USER)                                                    \
 	    -v $$(pwd)/.go:/go                                                 \
 	    -v $$(pwd):/go/src/$(PKG)                                          \
 	    -v $$(pwd)/bin/$(ARCH):/go/bin                                     \
@@ -115,8 +116,7 @@ version:
 
 test: build-dirs
 	@docker run                                                            \
-	    -ti                                                                \
-	    -u $$(id -u):$$(id -g)                                             \
+	    -ti $(SET_USER)                                                    \
 	    -v $$(pwd)/.go:/go                                                 \
 	    -v $$(pwd):/go/src/$(PKG)                                          \
 	    -v $$(pwd)/bin/$(ARCH):/go/bin                                     \
