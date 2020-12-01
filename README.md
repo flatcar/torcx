@@ -3,7 +3,7 @@
 # torcx - a boot-time addon manager
 
 [![Apache](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Build Status](https://travis-ci.org/coreos/torcx.svg?branch=master)](https://travis-ci.org/coreos/torcx)
+![Go](https://github.com/kinvolk/torcx/workflows/Go/badge.svg)
 
 torcx (pronounced _"torks"_) is a boot-time manager for system-wide ephemeral customization of Linux systems.
 It has been built specifically to work with an immutable OS such as [Flatcar Container Linux][flatcar-cl] by Kinvolk.
