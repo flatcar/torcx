@@ -1,4 +1,5 @@
 // Copyright 2018 CoreOS Inc.
+// Copyright 2020 Kinvolk GmbH
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -61,12 +62,13 @@ func TestEvaluateURLTemplating(t *testing.T) {
 		t.Fatal(err)
 	}
 	osReleasePath := filepath.Join(libdir, "os-release")
-	osContent := `
+	osContentCoreos := `
 ID="coreos"
 VERSION_ID="1680.2.0"
 COREOS_BOARD="amd64-usr"
 `
-	if err := ioutil.WriteFile(osReleasePath, []byte(osContent), 0755); err != nil {
+
+	if err := ioutil.WriteFile(osReleasePath, []byte(osContentCoreos), 0755); err != nil {
 		t.Fatal(err)
 	}
 
@@ -92,11 +94,23 @@ COREOS_BOARD="amd64-usr"
 			basURL + "amd64-usr",
 		},
 		{
+			"${FLATCAR_BOARD}",
+			basURL + "amd64-usr",
+		},
+		{
 			"${COREOS_USR}",
 			basURL + tmpDir,
 		},
 		{
+			"${FLATCAR_USR}",
+			basURL + tmpDir,
+		},
+		{
 			"${ID}/${COREOS_BOARD}/${VERSION_ID}",
+			basURL + "coreos/amd64-usr/1680.2.0",
+		},
+		{
+			"${ID}/${FLATCAR_BOARD}/${VERSION_ID}",
 			basURL + "coreos/amd64-usr/1680.2.0",
 		},
 	}
@@ -111,7 +125,82 @@ COREOS_BOARD="amd64-usr"
 			t.Fatalf("got unexpected error %s", err)
 		}
 		if res.String() != tt.result {
-			t.Fatalf("expected %s, got %s", tt.result, res)
+			t.Fatalf("using %q: expected %s, got %s", tt.template, tt.result, res)
 		}
 	}
+
+	osContentFlatcar := `
+NAME="Flatcar Container Linux by Kinvolk"
+ID=flatcar
+ID_LIKE=coreos
+VERSION=2705.0.0
+VERSION_ID=2705.0.0
+BUILD_ID=2020-11-26-2020
+PRETTY_NAME="Flatcar Container Linux by Kinvolk 2705.0.0 (Oklo)"
+ANSI_COLOR="38;5;75"
+HOME_URL="https://flatcar-linux.org/"
+BUG_REPORT_URL="https://issues.flatcar-linux.org"
+FLATCAR_BOARD="amd64-usr"
+`
+	if err := ioutil.WriteFile(osReleasePath, []byte(osContentFlatcar), 0755); err != nil {
+		t.Fatal(err)
+	}
+
+	basURL = "https://example.com/baseurl/"
+	testCases = []struct {
+		template string
+		result   string
+	}{
+		{
+			"",
+			basURL,
+		},
+		{
+			"${ID}",
+			basURL + "flatcar",
+		},
+		{
+			"${VERSION_ID}",
+			basURL + "2705.0.0",
+		},
+		{
+			"${COREOS_BOARD}",
+			basURL + "amd64-usr",
+		},
+		{
+			"${FLATCAR_BOARD}",
+			basURL + "amd64-usr",
+		},
+		{
+			"${COREOS_USR}",
+			basURL + tmpDir,
+		},
+		{
+			"${FLATCAR_USR}",
+			basURL + tmpDir,
+		},
+		{
+			"${ID}/${COREOS_BOARD}/${VERSION_ID}",
+			basURL + "flatcar/amd64-usr/2705.0.0",
+		},
+		{
+			"${ID}/${FLATCAR_BOARD}/${VERSION_ID}",
+			basURL + "flatcar/amd64-usr/2705.0.0",
+		},
+	}
+
+	for _, tt := range testCases {
+		template := basURL + tt.template
+		r := Remote{
+			TemplateURL: template,
+		}
+		res, err := r.evaluateURL(tmpDir)
+		if err != nil {
+			t.Fatalf("got unexpected error %s", err)
+		}
+		if res.String() != tt.result {
+			t.Fatalf("using %q: expected %s, got %s", tt.template, tt.result, res)
+		}
+	}
+
 }

@@ -51,8 +51,8 @@ Entries:
 -   `value/keys/#/armored_keyring`: path to an ASCII-armored OpenPGP keyring, relative to the directory where this configuration is located.
 
 URL template is evaluated for simple variable substitution. Interpolated variables are:
- * `${COREOS_BOARD}`: board type (e.g. "amd64-usr")
- * `${COREOS_USR}`: path to a USR mountpoint (e.g. "/usr")
+ * `${FLATCAR_BOARD}`: board type (e.g. "amd64-usr")
+ * `${FLATCAR_USR}`: path to a USR mountpoint (e.g. "/usr")
  * `${VERSION_ID}`: OS version (e.g. "1680.2.0")
  * `${ID}`: OS vendor ID (e.g. "coreos")
 
@@ -68,7 +68,7 @@ Example:
   }
 }
 ```
-*Note*: the `${COREOS_USR}` entry is used to locate the temporary mountpoint used by `update-engine`.
+*Note*: the `${FLATCAR_USR}` entry is used to locate the temporary mountpoint used by `update-engine`.
 
 ### Changes to profile manifest
 

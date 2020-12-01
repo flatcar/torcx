@@ -23,12 +23,12 @@ NOTE: `file://` URLs should generally only be used by offline remotes distribute
 ## Templating
 
 URL template in `base_url` is evaluated at runtime for simple variable substitution. Interpolated variables are:
- * `${COREOS_BOARD}`: board type (e.g. "amd64-usr")
- * `${COREOS_USR}`: path to a USR mountpoint (e.g. "/usr")
+ * `${FLATCAR_BOARD}`: board type (e.g. "amd64-usr")
+ * `${FLATCAR_USR}`: path to a USR mountpoint (e.g. "/usr")
  * `${VERSION_ID}`: OS version (e.g. "1680.2.0")
  * `${ID}`: OS vendor ID (e.g. "coreos")
 
-NOTE: `${COREOS_USR}` variable should generally only be used by offline remotes distributed as part of `/usr`, and controlled by the OS vendor.
+NOTE: `${FLATCAR_USR}` variable should generally only be used by offline remotes distributed as part of `/usr`, and controlled by the OS vendor.
 
 ## JSON schema
 

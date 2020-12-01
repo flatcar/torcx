@@ -1,4 +1,5 @@
 // Copyright 2018 CoreOS Inc.
+// Copyright 2020 Kinvolk GmbH
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -77,14 +78,33 @@ func (r *Remote) evaluateURL(usrMountpoint string) (*url.URL, error) {
 	if err != nil {
 		return nil, errors.Wrapf(err, "failed to parse %s", osReleasePath)
 	}
-	osMeta["COREOS_USR"] = usrMountpoint
+	osMeta["FLATCAR_USR"] = usrMountpoint
 
 	templateVars := map[string]string{
-		"COREOS_BOARD": osMeta["COREOS_BOARD"],
-		"COREOS_USR":   osMeta["COREOS_USR"],
-		"ID":           osMeta["ID"],
-		"VERSION_ID":   osMeta["VERSION_ID"],
+		"FLATCAR_BOARD": osMeta["FLATCAR_BOARD"],
+		"COREOS_BOARD":  osMeta["COREOS_BOARD"],
+		"FLATCAR_USR":   osMeta["FLATCAR_USR"],
+		"COREOS_USR":    osMeta["COREOS_USR"],
+		"ID":            osMeta["ID"],
+		"VERSION_ID":    osMeta["VERSION_ID"],
 	}
+
+	// The trick here is to allow a little backwards compatibility, and
+	// migration. But not to complicate things, as I'm pretty sure no one is
+	// using this...
+	if templateVars["COREOS_BOARD"] == "" && templateVars["FLATCAR_BOARD"] != "" {
+		templateVars["COREOS_BOARD"] = templateVars["FLATCAR_BOARD"]
+	}
+	if templateVars["COREOS_USR"] == "" && templateVars["FLATCAR_USR"] != "" {
+		templateVars["COREOS_USR"] = templateVars["FLATCAR_USR"]
+	}
+	if templateVars["FLATCAR_BOARD"] == "" && templateVars["COREOS_BOARD"] != "" {
+		templateVars["FLATCAR_BOARD"] = templateVars["COREOS_BOARD"]
+	}
+	if templateVars["FLATCAR_USR"] == "" && templateVars["COREOS_USR"] != "" {
+		templateVars["FLATCAR_USR"] = templateVars["COREOS_USR"]
+	}
+
 	urlRaw, err := gotmpl.TemplateString(r.TemplateURL, gotmpl.MapLookup(templateVars))
 	if err != nil {
 		return nil, errors.Wrapf(err, "failed to evaluate template %s", r.TemplateURL)
