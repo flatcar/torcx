@@ -81,7 +81,7 @@ build: bin/$(ARCH)/$(BIN)
 bin/$(ARCH)/$(BIN): build-dirs
 	@echo "building: $@"
 	@docker run                                                            \
-	    -ti $(SET_USER)                                                    \
+	    -i $(SET_USER)                                                     \
 	    -v $$(pwd)/.go:/go                                                 \
 	    -v $$(pwd):/go/src/$(PKG)                                          \
 	    -v $$(pwd)/bin/$(ARCH):/go/bin                                     \
@@ -116,7 +116,7 @@ version:
 
 test: build-dirs
 	@docker run                                                            \
-	    -ti $(SET_USER)                                                    \
+	    -i $(SET_USER)                                                     \
 	    -v $$(pwd)/.go:/go                                                 \
 	    -v $$(pwd):/go/src/$(PKG)                                          \
 	    -v $$(pwd)/bin/$(ARCH):/go/bin                                     \
