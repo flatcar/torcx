@@ -328,7 +328,6 @@ func unpackTgz(applyCfg *ApplyConfig, tgzPath, imageName string) (string, error)
 
 	tr := tar.NewReader(gr)
 	untarCfg := pkgtar.ExtractCfg{}.Default()
-	untarCfg.XattrPrivileged = true
 	err = pkgtar.ChrootUntar(tr, topDir, untarCfg)
 	if err != nil {
 		return "", errors.Wrapf(err, "unpacking %q", tgzPath)
