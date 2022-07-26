@@ -244,13 +244,6 @@ func SealSystemState(applyCfg *ApplyConfig) error {
 		}
 	}
 
-	// Remount the unpackdir RO
-	if err := unix.Mount(applyCfg.RunUnpackDir(), applyCfg.RunUnpackDir(),
-		"", unix.MS_REMOUNT|unix.MS_RDONLY, ""); err != nil {
-
-		return errors.Wrap(err, "failed to remount read-only")
-	}
-
 	logrus.WithFields(logrus.Fields{
 		"path":    SealPath,
 		"content": content,
