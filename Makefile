@@ -16,7 +16,7 @@
 BIN := torcx
 
 # This repo's root import path (under GOPATH).
-PKG := github.com/flatcar-linux/torcx
+PKG := github.com/flatcar/torcx
 
 # Where to push the docker image.
 REGISTRY ?= quay.io/kinvolk

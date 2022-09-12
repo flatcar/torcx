@@ -23,7 +23,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 
-	"github.com/flatcar-linux/torcx/internal/torcx"
+	"github.com/flatcar/torcx/internal/torcx"
 )
 
 // fillCommonRuntime initializes common configuration settings, from several

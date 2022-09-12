@@ -24,8 +24,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/flatcar-linux/torcx/internal/cli"
-	"github.com/flatcar-linux/torcx/internal/torcx"
+	"github.com/flatcar/torcx/internal/cli"
+	"github.com/flatcar/torcx/internal/torcx"
 )
 
 func TestImageListEmpty(t *testing.T) {

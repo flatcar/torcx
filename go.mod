@@ -1,4 +1,4 @@
-module github.com/flatcar-linux/torcx
+module github.com/flatcar/torcx
 
 go 1.15
 

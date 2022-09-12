@@ -21,7 +21,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/flatcar-linux/torcx/internal/torcx"
+	"github.com/flatcar/torcx/internal/torcx"
 )
 
 const (

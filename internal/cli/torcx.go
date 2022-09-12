@@ -17,7 +17,7 @@ package cli
 import (
 	"strings"
 
-	"github.com/flatcar-linux/torcx/pkg/multicall"
+	"github.com/flatcar/torcx/pkg/multicall"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
