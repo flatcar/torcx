@@ -35,7 +35,7 @@ var inManifest = ProfileManifestV0JSON{
 
 func TestGetProfileV0(t *testing.T) {
 	// Schema of profile v0 is described in
-	// https://github.com/flatcar-linux/torcx/blob/master/Documentation/schemas/profile-manifest-v0.md
+	// https://github.com/flatcar/torcx/blob/master/Documentation/schemas/profile-manifest-v0.md
 	profilePath := "../../fixtures/test-get-profile-v0.json"
 
 	if _, err := os.Stat(profilePath); err != nil {

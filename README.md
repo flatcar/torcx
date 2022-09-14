@@ -8,7 +8,7 @@
 torcx (pronounced _"torks"_) is a boot-time manager for system-wide ephemeral customization of Linux systems.
 It has been built specifically to work with an immutable OS such as [Flatcar Container Linux][flatcar-cl] by Kinvolk.
 
-[flatcar-cl]: https://www.flatcar-linux.org/releases/
+[flatcar-cl]: https://www.flatcar.org/releases/
 
 torcx focuses on:
 * providing a way for users to add additional binaries and services, even if not shipped in the base image
